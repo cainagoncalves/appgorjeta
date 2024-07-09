@@ -3,6 +3,7 @@ package com.example.appgorjeta
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import com.example.appgorjeta.databinding.ActivityMainBinding
 import com.google.android.material.textfield.TextInputEditText
 
 class MainActivity : AppCompatActivity() {
@@ -15,19 +16,16 @@ class MainActivity : AppCompatActivity() {
     // Limpar
 
     // Recuperar as Views do layout
-    // Find view by id
     // ViewBinding
+
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val btnClean = findViewById<Button>(R.id.btn_clean)
-        val btnDone = findViewById<Button>(R.id.btn_done)
-        val edtTotal = findViewById<TextInputEditText>(R.id.tie_total)
-        val edtNumPeople = findViewById<TextInputEditText>(R.id.tie_num_of_people)
-
-        btnClean.setOnClickListener {
+        binding.btnClean.setOnClickListener {
 
         }
 
