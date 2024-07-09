@@ -18,12 +18,26 @@ class MainActivity : AppCompatActivity() {
     // Recuperar as Views do layout
     // ViewBinding
 
+    // Recuperar Radio buttons
+
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.rbOptionOne.setOnCheckedChangeListener { _, isChecked ->
+            println("Cainã Option one:$isChecked")
+        }
+
+        binding.rbOptionTwo.setOnCheckedChangeListener { _, isChecked ->
+            println("Cainã Option two:$isChecked")
+        }
+
+        binding.rbOptionThree.setOnCheckedChangeListener { _, isChecked ->
+            println("Cainã Option three:$isChecked")
+        }
 
         binding.btnClean.setOnClickListener {
 
